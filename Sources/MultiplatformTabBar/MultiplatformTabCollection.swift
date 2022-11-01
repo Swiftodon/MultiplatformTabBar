@@ -12,7 +12,7 @@ import SwiftUI
  Holds the collection of `MultiplatformTabs` that will be displayed in a `MultiplatformTabBar`.
  */
 public class MultiplatformTabCollection:ObservableObject {
-
-    /// The tab collection.
-   @Published public var tabs:[MultiplatformTab] = []
+  
+  /// The tab collection.
+  @Published public var tabs:[MultiplatformTab] = []
 }
