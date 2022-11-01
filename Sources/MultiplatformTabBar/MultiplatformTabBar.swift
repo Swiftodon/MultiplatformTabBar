@@ -225,7 +225,7 @@ public struct MultiplatformTabBar: View {
     ///   - tag: An optional tag for the tab.
     ///   - content: The body of the page that will be displayed when the tab is selected in SwiftUI.
     /// - Returns: The parent `MultiplatformTabBar`.
-    @discardableResult public func tab<Content: View>(title:String, icon:Image, tag:String = "", @ViewBuilder content: () -> Content) -> MultiplatformTabBar {
+    @discardableResult public func tab<Content: View>(title:String = "", icon:Image, tag:String = "", @ViewBuilder content: () -> Content) -> MultiplatformTabBar {
         
         // Add tab to collection
         tabSet.tabs.append(MultiplatformTab(title: title, icon: icon, tag: tag, contents: AnyView(content())))

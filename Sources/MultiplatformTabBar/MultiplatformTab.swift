@@ -41,7 +41,7 @@ public struct MultiplatformTab: View {
     ///   - icon: The icon for the tab.
     ///   - tag: An optional tag for the tab.
     ///   - contents: The SwiftUI content for the page body displayed when this tab is selected.
-    public init(title:String, icon:Image, tag:String = "", contents:AnyView) {
+    public init(title:String = "", icon:Image, tag:String = "", contents:AnyView) {
         self.title = title
         self.icon = icon
         self.tag = tag
@@ -59,8 +59,10 @@ public struct MultiplatformTab: View {
             .aspectRatio(contentMode: .fit)
             .frame(width: 24, height: 24, alignment: .center)
             
-            Text(title)
+            if !title.isEmpty {
+              Text(title)
                 .font(.footnote)
+            }
         }
         .background(Color.red.opacity(0.0))
     }
