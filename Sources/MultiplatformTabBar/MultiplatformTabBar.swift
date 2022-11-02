@@ -71,12 +71,14 @@ public struct MultiplatformTabBar: View {
   
   /// Holds the collection of tabs being presented.
   @ObservedObject public var tabSet:MultiplatformTabCollection = MultiplatformTabCollection()
+    
+  private var buttonSize: CGSize
   
   // MARK: - Initializers
   
   /// Creates a new instance of the object.
   public init() {
-    
+    buttonSize = CGSize(width: 52, height: 52)
   }
   
   
@@ -85,11 +87,12 @@ public struct MultiplatformTabBar: View {
   ///   - tabPosition: The Tab Bar position.
   ///   - barVerticalAlignment: The Tab Bar's vertical alignment.
   ///   - barHorizontalAlignment: The Tab Bar's horizontal alignment.
-  public init(tabPosition:MultiplatformTabViewPosition = .top, barVerticalAlignment: MultiplatformTabBarVerticalAlignment = .center, barHorizontalAlignment: MultiplatformTabBarHorizontalAlignment = .center) {
+  public init(tabPosition:MultiplatformTabViewPosition = .top, barVerticalAlignment: MultiplatformTabBarVerticalAlignment = .center, barHorizontalAlignment: MultiplatformTabBarHorizontalAlignment = .center, buttonSize: CGSize = CGSize(width: 52, height: 52)) {
     // Initialize
     self.tabPosition = tabPosition
     self.barVerticalAlignment = barVerticalAlignment
     self.barHorizontalAlignment = barHorizontalAlignment
+    self.buttonSize = buttonSize
   }
   
   // MARK: - Functions
@@ -107,7 +110,7 @@ public struct MultiplatformTabBar: View {
             .overlay(
               tabSet.tabs[index]
             )
-            .frame(width: 52, height: 52)
+            .frame(width: buttonSize.width, height: buttonSize.height)
             .padding(0)
             .foregroundColor(self.selection == index ? Color.accentColor : Color.primary)
             .onTapGesture {
@@ -135,7 +138,7 @@ public struct MultiplatformTabBar: View {
             .overlay(
               tabSet.tabs[index]
             )
-            .frame(width: 52, height: 52)
+            .frame(width: buttonSize.width, height: buttonSize.height)
             .padding(0)
             .foregroundColor(self.selection == index ? Color.accentColor : Color.primary)
             .onTapGesture {
