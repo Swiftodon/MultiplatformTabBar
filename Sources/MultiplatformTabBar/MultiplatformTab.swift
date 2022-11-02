@@ -57,7 +57,7 @@ public struct MultiplatformTab: View {
       icon
         .resizable()
         .aspectRatio(contentMode: .fit)
-        .frame(width: 24, height: 24, alignment: .center)
+        .frame(width: 18, height: 18, alignment: .center)
       
       if !title.isEmpty {
         Text(title)
