@@ -107,7 +107,7 @@ public struct MultiplatformTabBar: View {
             .overlay(
               tabSet.tabs[index]
             )
-            .frame(width: 65, height: 65)
+            .frame(width: 52, height: 52)
             .padding(0)
             .foregroundColor(self.selection == index ? Color.accentColor : Color.primary)
             .onTapGesture {
@@ -135,7 +135,7 @@ public struct MultiplatformTabBar: View {
             .overlay(
               tabSet.tabs[index]
             )
-            .frame(width: 65, height: 65)
+            .frame(width: 52, height: 52)
             .padding(0)
             .foregroundColor(self.selection == index ? Color.accentColor : Color.primary)
             .onTapGesture {
