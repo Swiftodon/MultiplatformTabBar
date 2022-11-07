@@ -187,7 +187,7 @@ public struct MultiplatformTabBar: View {
       case .left:
         HStack(spacing: 0) {
           barVertical
-            .padding(.horizontal, 5)
+                .padding(.all, 5)
           
           if tabSet.tabs.count > 0 {
             tabSet.tabs[selection].contents
@@ -205,7 +205,7 @@ public struct MultiplatformTabBar: View {
           }
           
           barVertical
-            .padding(.horizontal, 5)
+            .padding(.all, 5)
         }
         .padding(0)
     }
