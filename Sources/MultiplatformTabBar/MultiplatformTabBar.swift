@@ -131,7 +131,9 @@ public struct MultiplatformTabBar: View {
   private var barVertical: some View {
     HStack {
       VStack {
-        Spacer()
+        if barVerticalAlignment == .center || barVerticalAlignment == .bottom {
+          Spacer()
+        }
         ForEach(0..<tabSet.tabs.count, id: \.self) { index in
           RoundedRectangle(cornerRadius: 10)
             .fill(self.selection == index ? Color.secondaryBackgroundColor : Color.red.opacity(0.0))
@@ -145,7 +147,9 @@ public struct MultiplatformTabBar: View {
               self.selection = index
             }
         }
-        Spacer()
+        if barVerticalAlignment == .center || barVerticalAlignment == .top {
+          Spacer()
+        }
       }
       Divider()
     }
